@@ -32,7 +32,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    api project(':base')
-    api project(':core')
-    api project(':stream')
+//    api project(':base')
+//    api project(':core')
+//    api project(':stream')
+    api 'com.github.huunam1108.TestJitPackLib:base:5.0.1_BETA'
+    api 'com.github.huunam1108.TestJitPackLib:core:5.0.1_BETA'
+    api 'com.github.huunam1108.TestJitPackLib:stream:5.0.1_BETA'
 }
