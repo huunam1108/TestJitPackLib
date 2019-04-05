@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
+
 group='com.github.huunam1108'
 
 android {
@@ -27,13 +28,29 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation project(':base')
-    implementation project(':mux-r2.8.0')
     api 'com.android.support:appcompat-v7:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+artifacts {
+    archives file: file('libs/mux-r2.8.0.aar'), name: 'core-mux', type: 'aar'
+}
+
+install {
+    repositories {
+        mavenInstaller {
+            addFilter('mux-r2.8.0') { artifact, file ->
+                artifact.name == 'core-mux'
+            }
+            addFilter('core') { artifact, file ->
+                artifact.name == 'core'
+            }
+        }
+    }
 }

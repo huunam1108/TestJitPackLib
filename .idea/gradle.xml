@@ -10,7 +10,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/mux-r2.8.0" />
             <option value="$PROJECT_DIR$/stream" />
           </set>
         </option>
