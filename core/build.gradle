@@ -43,7 +43,7 @@ dependencies {
 }
 
 aarPlugin {
-    includeAllInnerDependencies true
+    includeAllInnerDependencies false
 }
 /*
 artifacts {
