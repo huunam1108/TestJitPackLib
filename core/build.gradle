@@ -2,8 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "com.mobbeel.plugin"
 
-group='com.github.huunam1108'
+group = 'com.github.huunam1108'
 
 android {
     compileSdkVersion 28
@@ -32,12 +33,19 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     implementation project(':base')
-    api 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-media-compat:28.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api 'com.google.android.exoplayer:exoplayer:2.9.5'
 }
 
+aarPlugin {
+    includeAllInnerDependencies true
+}
+/*
 artifacts {
     archives file: file('libs/mux-r2.8.0.aar'), name: 'core-mux', type: 'aar'
 }
@@ -54,3 +62,4 @@ install {
         }
     }
 }
+*/
